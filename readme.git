@@ -1,0 +1,28 @@
+step 1
+//generate you github key for this machine
+cd ~
+ssh-keygen -t rsa -C "lupingguang@qq.com" 
+
+step 2
+//log up git account 
+//copy pub ssh which got by step 1 to git hub
+//make a new repository
+
+step 3
+//build local branch
+git init
+git branch local_branch_name
+//set local branch "local_branch_name" refering  to remote default branch "master"
+git branch --set-upstream-to=origin/master local_branch_name
+
+step 4
+//connect to you github repository
+//lupingguang:github user name
+//java_test:github repository
+git remote add origin git@github.com:lupingguang/java_test.git
+git push -u origin master
+git push origin --tags
+
+step 5
+//make some change and push
+git push
